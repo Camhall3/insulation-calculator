@@ -13,7 +13,18 @@ const serviceM8Api = {
     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type, Authorization',
     'Access-Control-Allow-Credentials': 'true'
-  },
+  },const InsulationBagLoadingForm = ({ jobUuid }) => {
+  const [jobData, setJobData] = useState(null);
+  // ... rest of your component code
+
+  useEffect(() => {
+    if (jobUuid) {
+      loadJobData(jobUuid);
+    }
+  }, [jobUuid]);
+
+  // ... rest of your component code
+};
 
   async getJobData(uuid) {
     const response = await fetch(`${SM8_API_BASE}/job/${uuid}`, {
