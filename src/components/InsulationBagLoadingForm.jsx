@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 // ServiceM8 API utilities
 const SM8_API_BASE = 'https://api.servicem8.com/api_1.0';
-const APP_ID = process.env.REACT_APP_SM8_APP_ID;
-const APP_SECRET = process.env.REACT_APP_SM8_APP_SECRET;
+const APP_ID = '246773';
+const APP_SECRET = 'b80286af212e4c4ca9b6226d56b9fe7b';
 
 const serviceM8Api = {
   headers: {
@@ -19,9 +19,6 @@ const serviceM8Api = {
     const response = await fetch(`${SM8_API_BASE}/job/${uuid}`, {
       headers: this.headers
     });
-    if (!response.ok) {
-      throw new Error(`Error fetching job data: ${response.statusText}`);
-    }
     return response.json();
   },
 
@@ -29,9 +26,6 @@ const serviceM8Api = {
     const response = await fetch(`${SM8_API_BASE}/checklist?job_uuid=${jobUuid}`, {
       headers: this.headers
     });
-    if (!response.ok) {
-      throw new Error(`Error fetching checklists: ${response.statusText}`);
-    }
     return response.json();
   },
 
@@ -45,9 +39,6 @@ const serviceM8Api = {
         active: '1'
       })
     });
-    if (!response.ok) {
-      throw new Error(`Error creating checklist: ${response.statusText}`);
-    }
     return response.json();
   },
 
@@ -60,20 +51,14 @@ const serviceM8Api = {
         note: note
       })
     });
-    if (!response.ok) {
-      throw new Error(`Error creating job note: ${response.statusText}`);
-    }
     return response.json();
   },
 
   async deleteChecklist(uuid) {
-    const response = await fetch(`${SM8_API_BASE}/checklist/${uuid}`, {
+    await fetch(`${SM8_API_BASE}/checklist/${uuid}`, {
       method: 'DELETE',
       headers: this.headers
     });
-    if (!response.ok) {
-      throw new Error(`Error deleting checklist: ${response.statusText}`);
-    }
   }
 };
 
