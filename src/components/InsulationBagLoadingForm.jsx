@@ -23,19 +23,19 @@ const serviceM8Api = {
   },
 
   async getChecklists(jobUuid) {
-    const response = await fetch(`${SM8_API_BASE}/checklist?job_uuid=${jobUuid}`, {
+    const response = await fetch(`${SM8_API_BASE}/jobchecklist.json?job_uuid=${jobUuid}`, {
       headers: this.headers
     });
     return response.json();
   },
 
   async createChecklist(jobUuid, description) {
-    const response = await fetch(`${SM8_API_BASE}/checklist`, {
+    const response = await fetch(`${SM8_API_BASE}/jobchecklist.json`, {
       method: 'POST',
       headers: this.headers,
       body: JSON.stringify({
         job_uuid: jobUuid,
-        description: description,
+        name: description,
         active: '1'
       })
     });
@@ -43,7 +43,7 @@ const serviceM8Api = {
   },
 
   async createJobNote(jobUuid, note) {
-    const response = await fetch(`${SM8_API_BASE}/jobnote`, {
+    const response = await fetch(`${SM8_API_BASE}/jobnote.json`, {
       method: 'POST',
       headers: this.headers,
       body: JSON.stringify({
@@ -55,7 +55,7 @@ const serviceM8Api = {
   },
 
   async deleteChecklist(uuid) {
-    await fetch(`${SM8_API_BASE}/checklist/${uuid}`, {
+    await fetch(`${SM8_API_BASE}/jobchecklist/${uuid}.json`, {
       method: 'DELETE',
       headers: this.headers
     });
