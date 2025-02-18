@@ -13,33 +13,19 @@ const serviceM8Api = {
     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type, Authorization',
     'Access-Control-Allow-Credentials': 'true'
-  },const InsulationBagLoadingForm = ({ jobUuid }) => {
-  const [jobData, setJobData] = useState(null);
-  // ... rest of your component code
-
-  useEffect(() => {
-    if (jobUuid) {
-      loadJobData(jobUuid);
-    }
-  }, [jobUuid]);
-
-  // ... rest of your component code
-};
-
+  },
   async getJobData(uuid) {
     const response = await fetch(`${SM8_API_BASE}/job/${uuid}`, {
       headers: this.headers
     });
     return response.json();
   },
-
   async getChecklists(jobUuid) {
     const response = await fetch(`${SM8_API_BASE}/jobchecklist.json?job_uuid=${jobUuid}`, {
       headers: this.headers
     });
     return response.json();
   },
-
   async createChecklist(jobUuid, description) {
     const response = await fetch(`${SM8_API_BASE}/jobchecklist.json`, {
       method: 'POST',
@@ -52,7 +38,6 @@ const serviceM8Api = {
     });
     return response.json();
   },
-
   async createJobNote(jobUuid, note) {
     const response = await fetch(`${SM8_API_BASE}/jobnote.json`, {
       method: 'POST',
@@ -64,7 +49,6 @@ const serviceM8Api = {
     });
     return response.json();
   },
-
   async deleteChecklist(uuid) {
     await fetch(`${SM8_API_BASE}/jobchecklist/${uuid}.json`, {
       method: 'DELETE',
