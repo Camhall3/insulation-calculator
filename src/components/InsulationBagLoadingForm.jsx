@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 // ServiceM8 API utilities
 const SM8_API_BASE = 'https://api.servicem8.com/api_1.0';
 const APP_ID = '246773';
-const APP_SECRET = 'b80286af212e4c4ca9b6226d56b9';
+const APP_SECRET = 'b80286af212e4c4ca9b6226d56b9fe7b';
 
 const serviceM8Api = {
   headers: {
