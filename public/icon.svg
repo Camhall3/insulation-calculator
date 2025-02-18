@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Background -->
+  <rect width="32" height="32" rx="6" fill="#4F46E5"/>
+  
+  <!-- Calculator/Insulation Symbol -->
+  <rect x="8" y="6" width="16" height="20" rx="2" fill="white" opacity="0.9"/>
+  
+  <!-- Wavy lines representing insulation -->
+  <path d="M10 12 H22" stroke="#4F46E5" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M10 16 H22" stroke="#4F46E5" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M10 20 H22" stroke="#4F46E5" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- Calculator Display -->
+  <rect x="10" y="8" width="12" height="3" rx="1" fill="#4F46E5" opacity="0.1"/>
+</svg>
