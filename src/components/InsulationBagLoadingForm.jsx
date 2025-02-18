@@ -372,3 +372,23 @@ const InsulationBagLoadingForm = () => {
           className="flex-1 px-4 py-2 bg-blue-500 text-white rounded"
         >
           Submit
+          <div className="flex gap-4 mt-6">
+        <button
+          onClick={handleSubmit}
+          className="flex-1 px-4 py-2 bg-blue-500 text-white rounded"
+        >
+          Submit
+        </button>
+        
+        <button
+          onClick={handleStartAgain}
+          className="flex-1 px-4 py-2 bg-red-500 text-white rounded"
+        >
+          Start Again
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default InsulationBagLoadingForm;
